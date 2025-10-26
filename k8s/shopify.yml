@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: shopify-deployment
+  namespace: shopify
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopify
+  template:
+    metadata:
+      labels:
+         app: shopify
+    spec:
+      containers:
+        - name: shopify-app
+          image: hyysuresh/shopify-app:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: shopify-service
+  namespace: shopify
+spec:
+  selector:
+    app: shopify
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP

@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    container_name: shopify_app
+    ports: 
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - sanity
+  sanity:
+    build:
+      context: ./sanity
+    container_name: shopify_sanity
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./sanity_data:/usr/src/app
+    env_file:
+      - .env
+volumes:
+  sanity_data:
+
+    

@@ -1,0 +1,19 @@
+nohup: ignoring input
+Forwarding from 0.0.0.0:31000 -> 3000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+Handling connection for 31000
+E1026 09:47:29.682428   21575 portforward.go:357] "Unhandled Error" err="error creating error stream for port 31000 -> 3000: Timeout occurred"
+E1026 09:48:11.162974   21575 portforward.go:357] "Unhandled Error" err="error creating error stream for port 31000 -> 3000: Timeout occurred"
+E1026 09:48:45.643398   21575 portforward.go:357] "Unhandled Error" err="error creating error stream for port 31000 -> 3000: Timeout occurred"
+error: lost connection to pod
